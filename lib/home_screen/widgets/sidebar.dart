@@ -59,7 +59,7 @@ class SideBar extends StatelessWidget {
             ),
             SideBarButtons(
               isSelected: false,
-              buttonText: 'Help',
+              buttonText: 'Info',
               buttonIcon: FaIcon(CupertinoIcons.info),
               onTap: () {},
             ),
