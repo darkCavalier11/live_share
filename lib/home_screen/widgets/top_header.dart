@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:live_share/home_screen/widgets/search_text_field.dart';
 
 class TopHeader extends StatelessWidget {
@@ -43,7 +45,7 @@ class TopHeader extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.notifications_on_outlined),
+                child: Icon(CupertinoIcons.bell),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

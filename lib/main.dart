@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:line_icons/line_icons.dart';
-
+import 'package:live_share/constants/ui_constants.dart';
+import 'home_screen/widgets/home_activity_card.dart';
+import 'home_screen/widgets/recent_item_list.dart';
+import 'home_screen/widgets/sidebar.dart';
 import 'home_screen/widgets/top_header.dart';
 
 void main() {
@@ -20,8 +22,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final _headerKey = GlobalKey();
-
 class MyHome extends StatelessWidget {
   const MyHome({Key? key}) : super(key: key);
 
@@ -31,80 +31,19 @@ class MyHome extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 50.0, right: 50, top: 50),
-            child: TopHeader(
-              key: _headerKey,
-            ),
+            padding: const EdgeInsets.only(
+                left: UIconstants.topHeaderPadding,
+                right: UIconstants.topHeaderPadding,
+                top: UIconstants.topHeaderPadding),
+            child: TopHeader(),
           ),
           Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(UIconstants.bodyPadding),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Flexible(
-                  flex: 2,
-                  child: Container(
-                    height: 700,
-                    color: Colors.red,
-                    child: Column(
-                      children: [
-                        SideBarButtons(
-                          isSelected: true,
-                          buttonText: 'Dashboard',
-                          buttonIcon: Icon(CupertinoIcons.home),
-                          onTap: () {},
-                        ),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Favourites',
-                          buttonIcon: Icon(CupertinoIcons.heart),
-                          onTap: () {},
-                        ),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Shared',
-                          buttonIcon: Icon(CupertinoIcons.share),
-                          onTap: () {},
-                        ),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Bin',
-                          buttonIcon: Icon(CupertinoIcons.trash),
-                          onTap: () {},
-                        ),
-                        const SizedBox(height: 20),
-                        Divider(indent: 25, endIndent: 25),
-                        const SizedBox(height: 20),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Settings',
-                          buttonIcon: FaIcon(LineIcons.cog),
-                          onTap: () {},
-                        ),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Help',
-                          buttonIcon: FaIcon(CupertinoIcons.info),
-                          onTap: () {},
-                        ),
-                        Spacer(),
-                        SideBarButtons(
-                          isSelected: false,
-                          buttonText: 'Logout',
-                          buttonIcon: Icon(Icons.logout),
-                          onTap: () {},
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 6,
-                  child: Container(
-                    height: 20,
-                    color: Colors.green,
-                  ),
-                ),
+                SideBar(),
+                HomeView(),
                 Flexible(
                   flex: 3,
                   child: Container(
@@ -121,47 +60,53 @@ class MyHome extends StatelessWidget {
   }
 }
 
-class SideBarButtons extends StatelessWidget {
-  final bool isSelected;
-  final String buttonText;
-  final Widget buttonIcon;
-  final Function() onTap;
-  const SideBarButtons({
-    required this.isSelected,
-    required this.buttonText,
-    required this.buttonIcon,
-    required this.onTap,
+class HomeView extends StatelessWidget {
+  const HomeView({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(5),
+    return Flexible(
+      flex: 6,
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: isSelected ? Colors.grey[300] : null,
-        ),
+        height: MediaQuery.of(context).size.height - 168,
+        padding: const EdgeInsets.only(left: 20, right: 20),
         width: double.maxFinite,
-        padding: const EdgeInsets.only(
-          top: 8.0,
-          bottom: 8.0,
-        ),
-        child: Center(
-          child: Row(
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(width: 50),
-              buttonIcon,
-              const SizedBox(width: 10),
               Text(
-                buttonText,
+                'Recent',
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+              RecentItemList(),
+              Row(
+                children: [
+                  HomeActivityCard(
+                    activityType: ActivityType.UPLOAD,
+                    fileDownloaded: 23.8,
+                    fileName: 'file.pdf',
+                    fileSize: 48,
+                    internetSpeed: '2.3MB/s',
+                  ),
+                  HomeActivityCard(
+                    activityType: ActivityType.DOWNLOAD,
+                    fileDownloaded: 23.8,
+                    fileName: 'file.pdf',
+                    fileSize: 48,
+                    internetSpeed: '2.3MB/s',
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ),
-      onTap: onTap,
     );
   }
 }
