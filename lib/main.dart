@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:live_share/home_screen/views/dashboard_view.dart';
+import 'package:live_share/ui/base_screens/app_base_view.dart';
 
 
 void main() {
@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DashBoardView(),
+      home: AppBaseView(),
     );
   }
 }
-
-
-

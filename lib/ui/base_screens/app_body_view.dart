@@ -4,9 +4,8 @@ import 'package:live_share/home_screen/views/widgets/explore_tab.dart';
 import 'package:live_share/home_screen/views/widgets/home_view.dart';
 import 'package:live_share/home_screen/views/widgets/sidebar.dart';
 
-
-class DashboardBodyView extends StatelessWidget {
-  const DashboardBodyView({
+class AppBodyView extends StatelessWidget {
+  const AppBodyView({
     Key? key,
   }) : super(key: key);
 
