@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:live_share/constants/ui_constants.dart';
-import 'package:live_share/home_screen/widgets/search_text_field.dart';
+import 'package:live_share/home_screen/views/widgets/search_text_field.dart';
 
-class TopHeader extends StatelessWidget {
-  const TopHeader({
+class TopHeaderView extends StatelessWidget {
+  const TopHeaderView({
     Key? key,
   }) : super(key: key);
 
