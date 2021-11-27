@@ -50,11 +50,11 @@ class TopHeaderView extends StatelessWidget {
                   child: SearchTextField(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(UIconstants.regularPadding),
                   child: Icon(CupertinoIcons.bell),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(UIconstants.regularPadding),
                   child: CircleAvatar(maxRadius: 15),
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_share/constants/ui_constants.dart';
 
 class SearchTextField extends StatelessWidget {
   const SearchTextField({
@@ -8,7 +9,7 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(UIconstants.regularPadding),
       child: TextField(
         style: TextStyle(fontSize: 15),
         cursorColor: Colors.grey,

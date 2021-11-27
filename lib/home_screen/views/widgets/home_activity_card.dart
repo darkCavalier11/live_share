@@ -21,9 +21,9 @@ class HomeActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(UIconstants.regularPadding),
         child: Container(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(UIconstants.regularPadding),
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.1),
             borderRadius: BorderRadius.circular(UIconstants.cardBorderRadius),
@@ -42,7 +42,7 @@ class HomeActivityCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(UIconstants.regularPadding),
                   width: double.maxFinite,
                   decoration: BoxDecoration(
                     borderRadius:

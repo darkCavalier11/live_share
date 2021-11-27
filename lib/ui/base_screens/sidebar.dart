@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:live_share/constants/ui_constants.dart';
 
@@ -106,8 +105,8 @@ class SideBarButtons extends StatelessWidget {
         ),
         width: double.maxFinite,
         padding: const EdgeInsets.only(
-          top: 8.0,
-          bottom: 8.0,
+          top: UIconstants.regularPadding,
+          bottom: UIconstants.regularPadding,
         ),
         child: Center(
           child: Row(
