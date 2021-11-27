@@ -14,7 +14,10 @@ class SideBar extends StatelessWidget {
     return Flexible(
       flex: 2,
       child: Container(
-        constraints: BoxConstraints(maxWidth: 250),
+        constraints: BoxConstraints(
+          maxWidth: 250,
+          minWidth: 250,
+        ),
         height: MediaQuery.of(context).size.height - 168,
         child: Column(
           children: [
