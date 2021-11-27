@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:live_share/constants/ui_constants.dart';
-import 'package:live_share/home_screen/views/widgets/explore_tab.dart';
-import 'package:live_share/home_screen/views/widgets/home_view.dart';
-import 'package:live_share/home_screen/views/widgets/sidebar.dart';
+import 'package:live_share/home_screen/views/explore_tab.dart';
+import 'package:live_share/home_screen/views/home_view.dart';
+import 'package:live_share/ui/base_screens/sidebar.dart';
 
 class AppBodyView extends StatelessWidget {
   const AppBodyView({

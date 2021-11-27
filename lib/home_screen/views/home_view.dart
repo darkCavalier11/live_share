@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:live_share/home_screen/views/widgets/recent_item_list.dart';
 
-import 'home_activity_card.dart';
+import 'widgets/home_activity_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({

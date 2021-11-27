@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:live_share/home_screen/views/top_header_view.dart';
+import 'package:live_share/ui/base_screens/top_header_view.dart';
 
 import 'app_body_view.dart';
 
