@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:live_share/constants/ui_constants.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({
@@ -16,7 +17,6 @@ class SideBar extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints(
           maxWidth: 250,
-          minWidth: 250,
         ),
         height: MediaQuery.of(context).size.height - 168,
         child: Column(
@@ -98,10 +98,10 @@ class SideBarButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(UIconstants.cardBorderRadius),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(UIconstants.cardBorderRadius),
           color: isSelected ? Colors.grey[300] : null,
         ),
         width: double.maxFinite,

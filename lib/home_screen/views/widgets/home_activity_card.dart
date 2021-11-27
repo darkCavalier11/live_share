@@ -21,7 +21,7 @@ class HomeActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
@@ -45,7 +45,8 @@ class HomeActivityCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   width: double.maxFinite,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius:
+                        BorderRadius.circular(UIconstants.cardBorderRadius),
                     color: Colors.lightBlueAccent.withOpacity(0.1),
                   ),
                   child: Column(
