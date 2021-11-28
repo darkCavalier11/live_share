@@ -48,77 +48,102 @@ class HubView extends StatelessWidget {
               child: Container(
                 child: ListView.separated(
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Personal',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
+                    return InkWell(
+                      borderRadius:
+                          BorderRadius.circular(UIconstants.cardBorderRadius),
+                      onTap: () {
+                        print('Button tapped');
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.transparent,
+                                maxRadius: 18,
+                                backgroundImage: NetworkImage(
+                                    'https://www.thespruce.com/thmb/LIYt_gkk2IA7UCQsumcDzXOUn3Q=/2845x2845/smart/filters:no_upscale()/types-of-leaf-arrangements-3269814-03-a6b9b4775c5b47b79e14aed9a7e6ac90.jpg'),
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Personal',
+                                          style: TextStyle(
+                                            letterSpacing: -1,
+                                            fontSize: 20,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 40,
+                                          width: 80,
+                                          child: AvatarButtonStack(),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 2, horizontal: 4),
+                                          decoration: BoxDecoration(
+                                            color: Colors.blueAccent
+                                                .withOpacity(0.6),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'mac\'s iOS',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                        Text('  '),
+                                        Expanded(
+                                          child: Text(
+                                            'Hello World. There is nothing better in cross platform development alternative to flutter',
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Spacer(),
+                                        Text(
+                                          '3:52 PM',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                                Container(
-                                  height: 40,
-                                  width: 80,
-                                  child: AvatarButtonStack(),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 5),
-                            Row(
-                              textBaseline: TextBaseline.alphabetic,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 4),
-                                  decoration: BoxDecoration(
-                                    color: Colors.blueAccent.withOpacity(0.6),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'mac\'s IOS',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                Text('  '),
-                                Expanded(
-                                  child: Text(
-                                    'Hello World. There is nothing better in cross platform development alternative to flutter',
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Spacer(),
-                                Text(
-                                  '3:52 PM',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
                   },
                   itemCount: 10,
-                  separatorBuilder: (context, index) => Divider(
-                    height: 1,
-                  ),
+                  separatorBuilder: (context, index) => SizedBox.shrink(),
                 ),
               ),
             ),
