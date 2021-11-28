@@ -52,26 +52,62 @@ class GroupItem extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 2, horizontal: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.blueAccent.withOpacity(0.6),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'mac\'s iOS',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
+                      // CircleAvatar(
+                      //   maxRadius: 10,
+                      //   backgroundColor: Colors.deepPurpleAccent,
+                      //   // child: Text('S'),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.symmetric(
+                      //       vertical: 2, horizontal: 4),
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.purpleAccent.withOpacity(0.1),
+                      //     borderRadius: BorderRadius.circular(20),
+                      //   ),
+                      //   child: Center(
+                      //     child: Text(
+                      //       'mac\'s iOS',
+                      //       style: TextStyle(fontWeight: FontWeight.bold),
+                      //     ),
+                      //   ),
+                      // ),
                       Text('  '),
                       Expanded(
-                        child: Text(
-                          'Hello World. There is nothing better in cross platform development alternative to flutter, Believe',
+                        child: RichText(
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
+                          text: TextSpan(
+                            children: [
+                              WidgetSpan(
+                                child: Container(
+                                  padding: const EdgeInsets.all(2),
+                                  margin: const EdgeInsets.all(2),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 2,
+                                      color: Colors.deepPurpleAccent,
+                                    ),
+                                    color: Colors.deepPurpleAccent
+                                        .withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    'Mac\'s OS',
+                                    style: TextStyle(
+                                      color: Colors.deepPurpleAccent,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              TextSpan(
+                                text:
+                                    'Flutter is the best platform to develop cross platform apps at a significant amount of time. Flutter can speed up the work by 3 times.',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
