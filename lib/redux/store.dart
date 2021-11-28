@@ -30,7 +30,7 @@ class AppState {
 
   factory AppState.initialState() {
     return AppState(
-      uiState: UIState(flexSidebar: 2, flexBody: 7, flexTab1: 0, flexTab2: 4),
+      uiState: UIState(flexSidebar: 2, flexBody: 4, flexTab1: 4, flexTab2: 4),
     );
   }
 

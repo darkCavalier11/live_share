@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_share/constants/ui_constants.dart';
 import 'package:live_share/home_screen/views/widgets/recent_item_list.dart';
 
 import 'widgets/home_activity_card.dart';
@@ -12,7 +13,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height - 168,
-      padding: const EdgeInsets.only(left: 20, right: 20),
+      padding:
+          const EdgeInsets.symmetric(horizontal: UIconstants.regularPadding),
       width: double.maxFinite,
       child: SingleChildScrollView(
         physics: BouncingScrollPhysics(),

@@ -1,14 +1,14 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:live_share/constants/ui_constants.dart';
-import 'package:live_share/home_screen/views/explore_tab.dart';
+import 'package:live_share/ui/base_screens/explore_tab.dart';
 import 'package:live_share/home_screen/views/home_view.dart';
 import 'package:live_share/hubs/views/hubs_view.dart';
 import 'package:live_share/main.dart';
 import 'package:live_share/redux/store.dart';
 import 'package:live_share/ui/base_screens/sidebar.dart';
 
-const int _k = 0;
+const int _k = 1;
 
 class AppBodyView extends StatelessWidget {
   const AppBodyView({
@@ -32,14 +32,20 @@ class AppBodyView extends StatelessWidget {
                   flex: snapshot.flexBody,
                   child: HomeView(),
                 ),
-                Flexible(
-                  flex: snapshot.flexTab2,
-                  child: ExploreTab(),
-                ),
               ] else if (_k == 1) ...[
-                HubView(),
-                ExploreTab(),
-              ]
+                Flexible(
+                  flex: snapshot.flexBody,
+                  child: HubView(),
+                ),
+                Flexible(
+                  flex: snapshot.flexTab1,
+                  child: HubView(),
+                ),
+              ],
+              Flexible(
+                flex: snapshot.flexTab2,
+                child: ExploreTab(),
+              ),
             ],
           ),
         );
