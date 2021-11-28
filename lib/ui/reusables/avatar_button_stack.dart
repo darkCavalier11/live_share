@@ -65,33 +65,57 @@ class _AvatarButtonStackState extends State<AvatarButtonStack> {
           AnimatedPositioned(
             right: _right1,
             duration: Duration(milliseconds: 200),
-            child: CircleAvatar(
-              backgroundColor: Colors.amber,
-              maxRadius: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                shape: BoxShape.circle,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.amber,
+                maxRadius: 10,
+              ),
             ),
           ),
           AnimatedPositioned(
             right: _right2,
             duration: Duration(milliseconds: 200),
-            child: CircleAvatar(
-              backgroundColor: Colors.orange,
-              maxRadius: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                shape: BoxShape.circle,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.orange,
+                maxRadius: 10,
+              ),
             ),
           ),
           AnimatedPositioned(
             right: _right3,
             duration: Duration(milliseconds: 200),
-            child: CircleAvatar(
-              backgroundColor: Colors.blueGrey,
-              maxRadius: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                shape: BoxShape.circle,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.blueGrey,
+                maxRadius: 10,
+              ),
             ),
           ),
           AnimatedPositioned(
             duration: Duration(milliseconds: 200),
             right: _right4,
-            child: CircleAvatar(
-              backgroundColor: Colors.brown,
-              maxRadius: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                shape: BoxShape.circle,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.brown,
+                maxRadius: 10,
+              ),
             ),
           ),
         ],
