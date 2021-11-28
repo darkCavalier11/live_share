@@ -51,20 +51,64 @@ class HubView extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8),
                       child: Container(
-                        height: 80,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Personal',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Personal',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Container(
+                                  height: 40,
+                                  width: 80,
+                                  child: AvatarButtonStack(),
+                                ),
+                              ],
                             ),
-                            Container(
-                              width: 80,
-                              child: AvatarButtonStack(),
+                            const SizedBox(height: 5),
+                            Row(
+                              textBaseline: TextBaseline.alphabetic,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 2, horizontal: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blueAccent.withOpacity(0.6),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    'mac\'s IOS',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Text('  '),
+                                Expanded(
+                                  child: Text(
+                                    'Hello World. There is nothing better in cross platform development alternative to flutter',
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Spacer(),
+                                Text(
+                                  '3:52 PM',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -84,4 +128,3 @@ class HubView extends StatelessWidget {
     );
   }
 }
-

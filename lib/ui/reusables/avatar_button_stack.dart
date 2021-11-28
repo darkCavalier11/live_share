@@ -10,27 +10,29 @@ class AvatarButtonStack extends StatefulWidget {
 }
 
 class _AvatarButtonStackState extends State<AvatarButtonStack> {
-  double _left0 = 0, _left1 = 20, _left2 = 15, _left3 = 10;
+  double _right0 = 10, _right1 = 0, _right2 = 8, _right3 = 16, _right4 = 24;
   bool _isHovering = false;
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (event) {
         setState(() {
+          _right0 = 0;
+          _right1 = 15;
+          _right2 = 30;
+          _right3 = 45;
+          _right4 = 60;
           _isHovering = true;
-          _left0 = 60;
-          _left1 = 45;
-          _left2 = 30;
-          _left3 = 15;
         });
       },
       onExit: (event) {
         setState(() {
+          _right0 = 10;
+          _right1 = 0;
+          _right2 = 8;
+          _right3 = 16;
+          _right4 = 24;
           _isHovering = false;
-          _left0 = 0;
-          _left1 = 20;
-          _left2 = 15;
-          _left3 = 10;
         });
       },
       child: Stack(
@@ -38,7 +40,7 @@ class _AvatarButtonStackState extends State<AvatarButtonStack> {
         clipBehavior: Clip.none,
         children: [
           AnimatedPositioned(
-            left: _left0,
+            right: _right0,
             duration: Duration(milliseconds: 200),
             child: AnimatedContainer(
               duration: Duration(seconds: 200),
@@ -61,32 +63,36 @@ class _AvatarButtonStackState extends State<AvatarButtonStack> {
             ),
           ),
           AnimatedPositioned(
+            right: _right1,
             duration: Duration(milliseconds: 200),
-            left: _left1,
             child: CircleAvatar(
               backgroundColor: Colors.amber,
               maxRadius: 10,
             ),
           ),
           AnimatedPositioned(
+            right: _right2,
             duration: Duration(milliseconds: 200),
-            left: _left2,
             child: CircleAvatar(
               backgroundColor: Colors.orange,
               maxRadius: 10,
             ),
           ),
           AnimatedPositioned(
+            right: _right3,
             duration: Duration(milliseconds: 200),
-            left: _left3,
             child: CircleAvatar(
               backgroundColor: Colors.blueGrey,
               maxRadius: 10,
             ),
           ),
-          CircleAvatar(
-            backgroundColor: Colors.brown,
-            maxRadius: 10,
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 200),
+            right: _right4,
+            child: CircleAvatar(
+              backgroundColor: Colors.brown,
+              maxRadius: 10,
+            ),
           ),
         ],
       ),
