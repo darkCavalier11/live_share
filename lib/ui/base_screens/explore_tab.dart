@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:live_share/constants/ui_constants.dart';
+import 'package:live_share/ui/reusables/vertical_bar.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({
@@ -11,8 +12,6 @@ class ExploreTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height - 168,
-      padding:
-          const EdgeInsets.symmetric(horizontal: UIconstants.regularPadding),
       child: Container(
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(

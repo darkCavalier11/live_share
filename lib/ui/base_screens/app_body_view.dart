@@ -1,6 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:live_share/constants/ui_constants.dart';
+import 'package:live_share/hubs/views/chats_view.dart';
 import 'package:live_share/ui/base_screens/explore_tab.dart';
 import 'package:live_share/home_screen/views/home_view.dart';
 import 'package:live_share/hubs/views/hubs_view.dart';
@@ -39,7 +40,7 @@ class AppBodyView extends StatelessWidget {
                 ),
                 Flexible(
                   flex: snapshot.flexTab1,
-                  child: HubView(),
+                  child: ChatView(),
                 ),
               ],
               Flexible(

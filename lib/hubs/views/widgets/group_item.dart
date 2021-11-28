@@ -3,9 +3,7 @@ import 'package:live_share/constants/ui_constants.dart';
 import 'package:live_share/ui/reusables/avatar_button_stack.dart';
 
 class GroupItem extends StatelessWidget {
-  final int index;
   const GroupItem({
-    required this.index,
     Key? key,
   }) : super(key: key);
 
@@ -17,7 +15,6 @@ class GroupItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(UIconstants.cardBorderRadius),
-          color: index % 2 == 0 ? null : Colors.blueAccent.withOpacity(0.1),
         ),
         padding: const EdgeInsets.all(UIconstants.regularPadding),
         child: Row(
