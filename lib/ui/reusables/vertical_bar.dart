@@ -5,11 +5,11 @@ import 'package:live_share/constants/ui_constants.dart';
 class VerticalBar extends StatelessWidget {
   final String headerText;
   final Widget? trailing;
-  final List<Widget> children;
+  final Widget? child;
   const VerticalBar({
     Key? key,
     required this.headerText,
-    required this.children,
+    this.child,
     this.trailing,
   }) : super(key: key);
 
@@ -44,17 +44,7 @@ class VerticalBar extends StatelessWidget {
             ),
             Divider(),
             Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Container(
-                    color: index % 2 == 0
-                        ? null
-                        : Colors.lightBlue.withOpacity(0.1),
-                    child: children[index],
-                  );
-                },
-                itemCount: children.length,
-              ),
+              child: child ?? Container(),
             ),
           ],
         ),

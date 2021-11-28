@@ -10,7 +10,15 @@ class HubView extends StatelessWidget {
   Widget build(BuildContext context) {
     return VerticalBar(
       headerText: 'Groups',
-      children: List.filled(10, GroupItem()),
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return Container(
+            color: index % 2 == 0 ? null : Colors.lightBlue.withOpacity(0.1),
+            child: GroupItem(),
+          );
+        },
+        itemCount: 10,
+      ),
       trailing: IconButton(
         onPressed: () {},
         icon: Icon(

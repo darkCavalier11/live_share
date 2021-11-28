@@ -11,7 +11,6 @@ class ChatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return VerticalBar(
       headerText: 'Chats',
-      children: [],
       trailing: IconButton(
         onPressed: () {},
         icon: Icon(
